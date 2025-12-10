@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Ray Photography - Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: #0a0a0a; }
+        header { background: rgba(0,0,0,0.95); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        nav h1 { font-size: 1.8rem; }
+        nav ul { display: flex; list-style: none; }
+        nav li { margin-left: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        
+        .hero { 
+            background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center/cover; 
+            height: 100vh; 
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
+            margin-top: 70px;
+        }
+        .hero-content { background: rgba(0,0,0,0.6); padding: 2rem; border-radius: 10px; }
+        .hero h2 { font-size: 3.5rem; margin-bottom: 1rem; }
+        
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        h2 { text-align: center; color: white; margin-bottom: 3rem; font-size: 2.5rem; }
+        
+        /* Categories */
+        .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .category { background: #1a1a1a; padding: 1.5rem; border-radius: 15px; text-align: center; cursor: pointer; transition: transform 0.3s; }
+        .category:hover { transform: translateY(-10px); }
+        .category img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+        
+        /* Portfolio Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .photo { position: relative; overflow: hidden; border-radius: 15px; cursor: pointer; }
+        .photo img { width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s; }
+        .photo:hover img { transform: scale(1.1); }
+        .photo-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); color: white; padding: 1rem; }
+        
+        /* Booking */
+        #booking { background: #1a1a1a; border-radius: 20px; padding: 3rem; }
+        .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .booking-form input, .booking-form select, .booking-form textarea { 
+            width: 100%; padding: 1rem; margin-bottom: 1rem; border: none; border-radius: 8px; font-size: 1rem; 
+        }
+        .booking-form button { 
+            width: 100%; padding: 1rem; background: #ff6b6b; color: white; border: none; border-radius: 8px; 
+            font-size: 1.2rem; cursor: pointer; transition: background 0.3s;
+        }
+        .booking-form button:hover { background: #ff5252; }
+        
+        footer { background: #000; color: white; text-align: center; padding: 2rem; }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.5rem; }
+            .booking-grid { grid-template-columns: 1fr; }
+            nav ul { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>📸 Alex Ray</h1>
+            <ul>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#booking">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Visual Storyteller</h2>
+            <p>Specializing in weddings, portraits, commercial & lifestyle photography</p>
+        </div>
+    </section>
+
+    <section id="categories">
+        <h2>Photography Categories</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://www.sandals.com/blog/content/images/2019/11/beaches-turks-and-caicos-wedding-beach3.jpg" alt="Weddings">
+                <h3>Weddings</h3>
+                <p>Capturing your most precious moments with emotion and elegance</p>
+            </div>
+            <div class="category">
+                <img src="https://static.boredpanda.com/blog/wp-content/uploads/2014/12/Top-10-photographers-for-travel-portraits36__700.jpg" alt="Portraits">
+                <h3>Portraits</h3>
+                <p>Personal branding, family portraits, and headshots</p>
+            </div>
+            <div class="category">
+                <img src="https://www.tvacres.com/wp-content/uploads/2022/05/Television-Advertising.jpg" alt="Commercial">
+                <h3>Commercial</h3>
+                <p>Product photography and brand storytelling</p>
+            </div>
+            <div class="category">
+                <img src="https://img.freepik.com/premium-vector/balanced-lifestyle-choices-depicted-vibrant-vector-illustration_854757-10927.jpg?w=2000" alt="Lifestyle">
+                <h3>Lifestyle</h3>
+                <p>Authentic moments for brands and families</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Featured Work</h2>
+        <div class="gallery">
+            <div class="photo">
+                <img src="https://i.pinimg.com/originals/c9/41/fd/c941fd30367d4c660795c5b216bdd11f.jpg" alt="Wedding">
+                <div class="photo-info">
+                    <h4>Golden Hour Wedding</h4>
+                    <p>Santorini, Greece</p>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="https://cdn.mos.cms.futurecdn.net/p5quSf4dZXctG9WFepXFdR.jpg" alt="Portrait">
+                <div class="photo-info">
+                    <h4>Urban Portrait</h4>
+                    <p>New York City</p>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="https://blog.bit.ai/wp-content/uploads/2022/12/mw1920_Product_quality-amico.jpg" alt="Product">
+                <div class="photo-info">
+                    <h4>Coffee Product Shoot</h4>
+                    <p>Commercial</p>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="https://thumbs.dreamstime.com/z/big-family-father-mother-three-daughters-28520732.jpg" alt="Family">
+                <div class="photo-info">
+                    <h4>Family Lifestyle</h4>
+                    <p>Golden Hour Magic</p>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="https://wallpapercave.com/wp/wp7488275.jpg" alt="Event">
+                <div class="photo-info">
+                    <h4>Corporate Event</h4>
+                    <p>Product Launch</p>
+                </div>
+            </div>
+            <div class="photo">
+                <img src="https://media.glamour.com/photos/64dbc779c08bc78a537c66c2/master/w_2560%2Cc_limit/fall%2520fashion%2520trends.jpg" alt="Fashion">
+                <div class="photo-info">
+                    <h4>Fashion Editorial</h4>
+                    <p>Studio Shoot</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>Book Your Session</h2>
+        <form class="booking-grid">
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem;">Let's Create Something Beautiful</h3>
+                <p style="color: #ccc;">Ready to capture your story? Fill out the form and I'll get back to you within 24 hours with availability and pricing.</p>
+            </div>
+            <div class="booking-form">
+                <select required>
+                    <option value="">Select Session Type</option>
+                    <option>Wedding Photography</option>
+                    <option>Portrait Session</option>
+                    <option>Family Photography</option>
+                    <option>Commercial Shoot</option>
+                    <option>Event Coverage</option>
+                </select>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <input type="date" required>
+                <textarea rows="4" placeholder="Tell me about your vision, location, number of people, etc..."></textarea>
+                <button type="submit">Send Booking Request</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Alex Ray Photography. All rights reserved. | hello@alexrayphoto.com</p>
+    </footer>
+
+    <script>
+        // Form submission demo
+        document.querySelector('.booking-grid').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your booking request has been sent. I\'ll contact you within 24 hours.');
+        });
+    </script>
+</body>
+</html>
+
